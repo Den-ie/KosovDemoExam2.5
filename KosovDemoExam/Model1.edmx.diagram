@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb444841320b4a0ab9e277018dc4dbd9" Name="Diagram1">
+        <EntityTypeShape EntityType="user32Model.agent" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="user32Model.apartment" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="user32Model.client" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="user32Model.ddd" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="user32Model.house" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="user32Model.land" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="user32Model.supply" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="user32Model.sysdiagram" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="user32Model.district" Width="1.5" PointX="6.75" PointY="6.75" />
+        <AssociationConnector Association="user32Model.FK_supplies_agents" />
+        <AssociationConnector Association="user32Model.FK_supplies_clients" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

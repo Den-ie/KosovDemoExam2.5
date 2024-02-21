@@ -1,0 +1,183 @@
+﻿<Window x:Class="KosovDemoExam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KosovDemoExam"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Width="85" Height="25" Header="Клиенты">
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="0.6*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid Margin="5"
+                          x:Name="ClientsTable"
+                          Grid.ColumnSpan="4"
+                          Grid.RowSpan="2"/>
+
+                    <Button Content="Добавить" 
+                            Grid.Row="2" 
+                            Margin="5"
+                            Click="Add_Click"/>
+
+                    <Button Content="Редактировать" 
+                            Grid.Row="2" 
+                            Grid.Column="1" 
+                            Margin="5" Click="Edit_Click"/>
+
+                    <Button Content="Удалить" 
+                            Grid.Row="2" 
+                            Grid.Column="2" 
+                            Margin="5"
+                            Click="Delete_Click"/>
+
+                    <TextBlock Text="Поиск" 
+                            Grid.Row="2" 
+                            Grid.Column="3" 
+                            Margin="5,30,5,40"/>
+
+
+                    <TextBox x:Name="ClientsSearch"
+                             Grid.Row="2" 
+                             Grid.Column="3" 
+                             Margin="5,50,5,5"
+                             TextChanged="ClientsSearch_TextChanged"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Width="85" Height="25" Header="Риэлторы">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="0.6*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid Margin="5" 
+                              x:Name="AgentsTable"
+                              Grid.ColumnSpan="4"
+                              Grid.RowSpan="2"/>
+
+                    <Button Content="Добавить" 
+                           Grid.Row="2" 
+                           Margin="5" Click="AgentAdd_Click"/>
+
+                    <Button Content="Редактировать" 
+                            Grid.Row="2" 
+                            Grid.Column="1" 
+                            Margin="5" Click="AgentEdit_Click"/>
+
+                    <Button Content="Удалить" 
+                            Grid.Row="2" 
+                            Grid.Column="2" 
+                            Margin="5" Click="AgentDelete_Click"/>
+
+
+                    <TextBlock Text="Поиск" 
+                               Grid.Row="2" 
+                               Grid.Column="3" />
+
+
+                    <TextBox x:Name="AgentsSearch"
+                             Grid.Row="2" 
+                             Grid.Column="3" 
+                             Margin="5,50,5,5"
+                             TextChanged="AgentsSearch_TextChanged"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Width="85" Height="25" Header="Домики">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid Margin="10" 
+                          x:Name="Houses"
+                          Grid.ColumnSpan="4"
+                          Grid.RowSpan="4"/>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Width="85" Height="25" Header="Потребности">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="0.6*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <DataGrid Margin="5" 
+                              x:Name="SuppliesTable"
+                              Grid.ColumnSpan="4"
+                              Grid.RowSpan="2"
+                              AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Width="75" Binding="{Binding Id}"/>
+                            <DataGridTextColumn Header="Цена" Width="75" Binding="{Binding Price}"/>
+                            <DataGridTextColumn Header="ID Агента" Width="75" Binding="{Binding AgentId}"/>
+                            <DataGridTextColumn Header="ID Клиента" Width="75" Binding="{Binding ClientId}"/>
+                            <DataGridTextColumn Header="Агенство" Width="75" Binding="{Binding RealEstateId}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Button Content="Добавить" 
+                            Grid.Row="2" 
+                            Margin="5" 
+                            Click="SuppliesAdd_Click"/>
+
+                    <Button Content="Редактировать" 
+                            Grid.Row="2" 
+                            Grid.Column="1" 
+                            Margin="5" Click="SuppliesEdit_Click"/>
+
+                    <Button Content="Удалить" 
+                            Grid.Row="2" 
+                            Grid.Column="2" 
+                            Margin="5" 
+                            Click="SuppliesDelete_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

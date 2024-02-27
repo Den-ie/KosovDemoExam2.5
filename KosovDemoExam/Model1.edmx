@@ -98,7 +98,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Price" Type="int" Nullable="false" />
           <Property Name="AgentId" Type="int" Nullable="false" />
           <Property Name="ClientId" Type="int" Nullable="false" />
@@ -115,7 +115,9 @@
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <Association Name="FK_supplies_agents">
-          <End Role="agents" Type="Self.agents" Multiplicity="1" />
+          <End Role="agents" Type="Self.agents" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="supplies" Type="Self.supplies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="agents">
@@ -127,7 +129,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_supplies_clients">
-          <End Role="clients" Type="Self.clients" Multiplicity="1" />
+          <End Role="clients" Type="Self.clients" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="supplies" Type="Self.supplies" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="clients">

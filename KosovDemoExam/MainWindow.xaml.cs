@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using System.Windows.Shell;
 using static KosovDemoExam.AgentEdit;
 using static KosovDemoExam.EditClient;
+using static KosovDemoExam.EditSupplies;
 
 namespace KosovDemoExam
 {
@@ -104,7 +105,7 @@ namespace KosovDemoExam
                 entities.SaveChanges();
             }
             catch
-            {
+            { 
                 MessageBox.Show("Укажите существующее поле для удаления", "Ошибка!");
             }
         }
@@ -143,12 +144,23 @@ namespace KosovDemoExam
 
         private void SuppliesAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            SuplpliesAdd add = new SuplpliesAdd();
+            add.Owner = this;
+            add.ShowDialog();
         }
 
         private void SuppliesEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            int indexRow = SuppliesTable.SelectedIndex;
+            if (indexRow != -1)
+            {
+                supply row = (supply)SuppliesTable.Items[indexRow];
+                SupplyId.Id = row.Id;
+                EditSupplies Aedit = new EditSupplies();
+                Aedit.ShowDialog();
+                SuppliesTable.Items.Refresh();
+                SuppliesTable.Focus();
+            }
         }
 
         private void SuppliesDelete_Click(object sender, RoutedEventArgs e)

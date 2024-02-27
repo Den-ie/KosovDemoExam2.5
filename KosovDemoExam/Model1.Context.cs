@@ -12,19 +12,19 @@ namespace KosovDemoExam
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class user32Entities1 : DbContext
     {
         public user32Entities1()
             : base("name=user32Entities1")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<agent> agents { get; set; }
         public virtual DbSet<apartment> apartments { get; set; }
         public virtual DbSet<client> clients { get; set; }
